@@ -1,0 +1,44 @@
+ .content-header{
+         img {
+            height: 60vh;
+        }
+        .header-cont{
+            bottom:30px;
+            @media(min-width:1198px){
+                bottom:60px;
+            }
+            @media(min-width:1530px){
+                bottom: 230px;
+            }
+        }
+    }
+.content-wrapper{
+    background-color: #091017;
+    padding: 60px 8px 10px;
+    @media(min-width:768px){
+        padding: 60px 20px 10px;
+    }
+    .coral-gardens-manatee-cont{
+         background-color: #fff;
+        max-width: 850px;
+        padding: 10px;
+        margin: 0 auto;
+        @media(min-width:768px){
+           padding: 40px 35px 0;
+        }
+        h3,h2{
+            padding-top:20px;
+        }
+        ul{
+            padding-bottom:20px;
+        }
+        img{
+            margin:25px 0;
+            width:unset;
+            @media(max-width:767px){
+                height: auto;
+            }
+            
+        }
+    }
+}

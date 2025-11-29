@@ -1,0 +1,41 @@
+.mexico-rocks-sail-main{
+.content-header{
+    img {
+        height: auto;
+        @media(min-width:992px){
+            height: 40vh;
+        }
+    }
+        .header-cont{
+            bottom:30px;
+            @media(min-width:1198px){
+                bottom:60px;
+            }
+            @media(min-width:1530px){
+                bottom: 95px;
+            }
+        }
+    }
+.content-wrapper{
+   background-color: #0b1210;
+    padding: 60px 8px 10px;
+    @media(min-width:768px){
+        padding: 60px 20px 10px;
+    }}
+    .mexico-rocks-sail-cont{
+        background-color:#fff;
+        max-width: 760px;
+        margin:0 auto;
+        padding: 10px;
+        @media(min-width:768px){
+           padding: 40px 35px 0
+        }
+        img{
+            margin:25px 0;
+              width:unset;
+            @media(max-width:767px){
+                height: auto;
+            }
+        }
+    }
+}

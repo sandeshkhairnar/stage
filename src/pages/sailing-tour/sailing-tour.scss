@@ -9,7 +9,7 @@
         }
     }
     .conetent-wrapper {
-        background-color: #071114;
+       background-color: #18120a;
         padding: 60px 20px;
     }   
     .content-center {
@@ -22,6 +22,14 @@
         }
         ul{
             padding-bottom:20px;
+        }
+        img{
+            margin:25px 0;
+            width:unset;
+            @media(max-width:767px){
+                height: auto;
+            }
+            
         }
     }
 }
