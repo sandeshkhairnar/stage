@@ -1,7 +1,7 @@
 .mexico-rocks-sail-main{
 .content-header{
     img {
-        height: auto;
+        height: 30vh;
         @media(min-width:992px){
             height: 40vh;
         }
@@ -13,6 +13,11 @@
             }
             @media(min-width:1530px){
                 bottom: 95px;
+            }
+            h1{
+                @media(max-width:565px){
+                    font-size:40px;
+                }
             }
         }
     }
