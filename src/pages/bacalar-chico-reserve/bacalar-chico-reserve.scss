@@ -2,12 +2,26 @@
     .content-header{
         .header-cont{
             bottom:30px;
+            @media(max-width:767px){
+                bottom: 50px;
+                 h1 {
+                    font-size: 40px;
+                }
+            }
+            @media(max-width:564px){
+                 bottom:5px;
+                h1 {
+                    font-size: 22px;
+                }
+            } 
+            
             @media(min-width:1198px){
                 bottom:60px;
             }
             @media(min-width:1530px){
                 bottom: 230px;
             }
+
         }
     }
 .content-wrapper{
