@@ -1,0 +1,40 @@
+.packages-main{
+    .content-header{
+         img {
+            height: 25vh;
+            @media(min-width:992px){
+                height:65vh;
+            }
+        }
+        .header-cont{
+            bottom:30px;
+            @media(min-width:1198px){
+                bottom:60px;
+            }
+            @media(min-width:1530px){
+                bottom: 75px;
+            }
+        }
+    }
+.content-wrapper {
+    background-color: #1c364a;
+    padding: 60px 8px 10px;
+    @media(min-width:768px){
+        padding: 60px 20px 10px;
+    }
+   .packages-content {
+        max-width: 1300px;
+        margin: 0 auto;
+        background-color: white;
+        @media(max-width:767px){
+            table.table *{
+                font-size: 11px!important;
+            }
+            .card-body{
+                padding:0!important;
+            }
+        }
+    }
+    }
+}
+

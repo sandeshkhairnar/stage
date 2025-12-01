@@ -76,7 +76,7 @@ render={data => (
                   {data.allGraphCmsHomeVideo.edges.map(({ node: welcome }) => (
                   <div dangerouslySetInnerHTML={{ __html: welcome.content.html }} /> 
                   ))}
-        <a className="all-button" href="">View Tours</a>
+        <a className="all-button" href="/packages">View Tours</a>
 
        
       </div>
