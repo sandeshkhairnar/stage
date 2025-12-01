@@ -1,0 +1,77 @@
+.half-day-reef-fishing-main{
+    .content-header{
+        .header-cont{
+            bottom:30px;
+            @media(max-width:767px){
+                bottom: 50px;
+                 h1 {
+                    font-size: 40px;
+                }
+            }
+            @media(max-width:564px){
+                 bottom:5px;
+                h1 {
+                    font-size: 22px;
+                }
+            } 
+            
+            @media(min-width:1198px){
+                bottom:60px;
+            }
+            @media(min-width:1530px){
+                bottom: 230px;
+            }
+
+        }
+    }
+.content-wrapper{
+   background-color: #0b1210;
+    padding: 60px 8px 10px;
+    @media(min-width:768px){
+        padding: 60px 20px 10px;
+    }
+   
+     .half-day-reef-fishing-cont {
+        background-color: #fff;
+        max-width: 850px;
+        padding: 10px;
+        margin: 0 auto;
+        @media(min-width:768px){
+           padding: 40px 35px 0;
+        }}
+        h3,h2{
+            padding-top:20px;
+        }
+        ul{
+            padding-bottom:20px;
+        }
+            .container-flex {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap:wrap;
+            gap: 20px;
+            width: 100%;
+            align-items: center;
+            @media(max-width:767px){
+                gap: unset;
+            }
+            img{
+                margin:25px 0;
+                flex: 0 0 85%;
+                max-width: 85%;
+                height: 300px; /* Set a consistent height */
+                object-fit: cover;
+                border-radius: 8px; 
+                box-shadow: 7px 7px 18px 1px #333;
+                @media(max-width:767px){
+                    height: auto;
+                    margin: 0 auto 25px;
+                }
+                @media(min-width:768px){
+                flex: 0 0 45%;
+                max-width: 45%;
+                }
+            }
+        }
+    }
+}
