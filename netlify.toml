@@ -3,10 +3,9 @@
   publish = "public"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "20"
   NPM_FLAGS = "--legacy-peer-deps"
 
-# For Gatsby client-side routing
 [[redirects]]
   from = "/*"
   to = "/index.html"
