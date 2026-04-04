@@ -1,4 +1,5 @@
-const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
 
 require("dotenv").config({
   path: `.env.${activeEnv}`,
@@ -19,9 +20,9 @@ const plugins = [
   {
     resolve: `gatsby-plugin-sass`,
     options: {
-      implementation: require('sass'),
+      implementation: require("sass"),
       sassOptions: {
-        api: 'modern',
+        api: "modern",
         silenceDeprecations: ["legacy-js-api"],
       },
     },
@@ -35,18 +36,38 @@ const plugins = [
     },
   },
   {
-  resolve: 'gatsby-v5-source-hygraph',
-  options: {
-    endpoint: process.env.HYGRAPH_ENDPOINT,
-    token: process.env.HYGRAPH_TOKEN,
-    typePrefix: "GraphCms",
-    queryConcurrency: 1,          // Serial requests
-    delay: 300,                   // Wait 300ms between each request
-    fragmentsPath: "graphcms-fragments",
-    downloadLocalImages: false,
-    buildMarkdownNodes: false,
+    resolve: "gatsby-v5-source-hygraph",
+    options: {
+      endpoint: process.env.HYGRAPH_ENDPOINT,
+      token: process.env.HYGRAPH_TOKEN,
+      typePrefix: "GraphCms",
+      queryConcurrency: 1, // serial requests
+      fragmentsPath: "graphcms-fragments",
+      downloadLocalImages: false,
+      buildMarkdownNodes: false,
+      models: [
+        // 👈 add this
+        "AllDaySailingCayeCaulker",
+        "BacalarChicoReserve",
+        "CaveTubing",
+        "CoralGardensManatee",
+        "Fishingtrip",
+        "HolChanSharkRay",
+        "HomePickleball",
+        "HomeRestaurant",
+        "HomeSlideShow",
+        "HomeVideo",
+        "HomeWelcome",
+        "LamanaiMayanRuin",
+        "MexicoRocksSail",
+        "PageContactUs",
+        "PageDineIn",
+        "Rooms",
+        "SailingTour",
+        "Tour",
+      ],
+    },
   },
-},
   `gatsby-transformer-sharp`,
   `gatsby-plugin-sharp`,
   {
@@ -57,10 +78,10 @@ const plugins = [
       start_url: `/`,
       background_color: `#663399`,
       display: `minimal-ui`,
-      icon: `src/images/android-chrome-512x512.png`, 
+      icon: `src/images/android-chrome-512x512.png`,
     },
   },
-];
+]
 
 // Conditionally add Google GTag if the ID is provided
 if (process.env.GTAG_TRACKING_ID) {
@@ -69,17 +90,21 @@ if (process.env.GTAG_TRACKING_ID) {
     options: {
       trackingIds: [process.env.GTAG_TRACKING_ID],
       pluginConfig: {
-        head: true
+        head: true,
       },
     },
-  });
+  })
 } else {
-  console.warn("GTAG_TRACKING_ID not found in environment variables. Google Analytics will be disabled.");
+  console.warn(
+    "GTAG_TRACKING_ID not found in environment variables. Google Analytics will be disabled."
+  )
 }
 
 // Ensure Hygraph endpoint is provided
 if (!process.env.HYGRAPH_ENDPOINT) {
-  console.error("HYGRAPH_ENDPOINT is missing! Build will likely fail or return empty data.");
+  console.error(
+    "HYGRAPH_ENDPOINT is missing! Build will likely fail or return empty data."
+  )
 }
 
 module.exports = {
