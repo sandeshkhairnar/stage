@@ -35,17 +35,18 @@ const plugins = [
     },
   },
   {
-    resolve: 'gatsby-v5-source-hygraph',
-    options: {
-      endpoint: process.env.HYGRAPH_ENDPOINT,
-      token: process.env.HYGRAPH_TOKEN,
-      typePrefix: "GraphCms",
-      queryConcurrency: 1, // Keeps API calls stable
-      fragmentsPath: "graphcms-fragments",
-      downloadLocalImages: false,
-      buildMarkdownNodes: false,
-    },
+  resolve: 'gatsby-v5-source-hygraph',
+  options: {
+    endpoint: process.env.HYGRAPH_ENDPOINT,
+    token: process.env.HYGRAPH_TOKEN,
+    typePrefix: "GraphCms",
+    queryConcurrency: 1,          // Serial requests
+    delay: 300,                   // Wait 300ms between each request
+    fragmentsPath: "graphcms-fragments",
+    downloadLocalImages: false,
+    buildMarkdownNodes: false,
   },
+},
   `gatsby-transformer-sharp`,
   `gatsby-plugin-sharp`,
   {
