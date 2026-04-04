@@ -37,10 +37,40 @@ fragment ScheduledOperation on ScheduledOperation {
   }
   status
   affectedDocuments {
+    ... on AllDaySailingCayeCaulker {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
     ... on Asset {
       remoteTypeName: __typename
       remoteId: id
       locale
+      stage
+    }
+    ... on BacalarChicoReserve {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+    ... on CaveTubing {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+    ... on CoralGardensManatee {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+    ... on Fishingtrip {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+    ... on HolChanSharkRay {
+      remoteTypeName: __typename
+      remoteId: id
       stage
     }
     ... on HomePickleball {
@@ -64,6 +94,16 @@ fragment ScheduledOperation on ScheduledOperation {
       stage
     }
     ... on HomeWelcome {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+    ... on LamanaiMayanRuin {
+      remoteTypeName: __typename
+      remoteId: id
+      stage
+    }
+    ... on MexicoRocksSail {
       remoteTypeName: __typename
       remoteId: id
       stage
