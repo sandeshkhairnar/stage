@@ -40,7 +40,7 @@ const plugins = [
       endpoint: process.env.HYGRAPH_ENDPOINT,
       token: process.env.HYGRAPH_TOKEN,
       typePrefix: "GraphCms",
-      queryConcurrency: 2, // Keeps API calls stable
+      queryConcurrency: 1, // Keeps API calls stable
       fragmentsPath: "graphcms-fragments",
       downloadLocalImages: false,
       buildMarkdownNodes: false,
