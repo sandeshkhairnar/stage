@@ -5,19 +5,21 @@
  */
 
 const toolkit = require("gatsby-graphql-source-toolkit")
-const originalWrap = toolkit.wrapQueryExecutorWithQueue
+const PQueue = require("p-queue").default || require("p-queue")
 
-// Monkey-patch to implement rate-limiting (Hygraph free tier has 5 requests/sec limit)
+const globalHygraphQueue = new PQueue({
+  concurrency: 1,
+  interval: 1000,
+  intervalCap: 4,
+})
+
 toolkit.wrapQueryExecutorWithQueue = (executor, options) => {
   console.log(
-    `[Hygraph-Throttler] Intercepting request queue. Concurrency: 1, Interval: 1s, Max Requests: 4`
+    `[Hygraph-Global-Throttler] Intercepting request queue for a model. Redirecting to singleton queue.`
   )
-  return originalWrap(executor, {
-    ...options,
-    concurrency: 1, // Force sequential
-    interval: 1000, // 1 second window
-    intervalCap: 4, // Max 4 requests per second window
-  })
+  return async (args) => {
+    return globalHygraphQueue.add(() => executor(args))
+  }
 }
 
 /**
